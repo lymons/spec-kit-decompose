@@ -1,0 +1,33 @@
+schema_version: "1.0"
+
+extension:
+  id: "spec-kit-decompose"
+  name: "Decompose"
+  version: "1.0.0"
+  description: "Decompose large PRDs and tech specs into feature-level candidates for /speckit.specify"
+  author: "Chris Haveard"
+  repository: "https://github.com/chrishaveard/spec-kit-decompose"
+  license: "MIT"
+  homepage: "https://github.com/chrishaveard/spec-kit-decompose"
+
+requires:
+  speckit_version: ">=0.4.0"
+
+provides:
+  commands:
+    - name: "speckit.decompose"
+      file: "commands/decompose.md"
+      description: "Parse a source document and generate a feature map with dependency ordering"
+    - name: "speckit.decompose.select"
+      file: "commands/decompose-select.md"
+      description: "Select the next feature to specify from the feature map"
+    - name: "speckit.decompose.status"
+      file: "commands/decompose-status.md"
+      description: "Show decomposition progress across all features"
+
+tags:
+  - "process"
+  - "decomposition"
+  - "prd"
+  - "requirements"
+  - "planning"
