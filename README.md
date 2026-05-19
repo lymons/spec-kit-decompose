@@ -49,7 +49,7 @@ Install via the Spec Kit extension manager:
 Or clone into your extensions directory:
 
 ```
-git clone https://github.com/chrishaveard/spec-kit-decompose.git ~/.speckit/extensions/spec-kit-decompose
+git clone https://github.com/haveard/spec-kit-decompose.git ~/.speckit/extensions/spec-kit-decompose
 ```
 
 Requires Spec Kit ≥ 0.4.0.
