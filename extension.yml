@@ -1,7 +1,7 @@
 schema_version: "1.0"
 
 extension:
-  id: "spec-kit-decompose"
+  id: "decompose"
   name: "Decompose"
   version: "1.0.0"
   description: "Decompose large PRDs and tech specs into feature-level candidates for /speckit.specify"
@@ -15,9 +15,10 @@ requires:
 
 provides:
   commands:
-    - name: "speckit.decompose"
+    - name: "speckit.decompose.decompose"
       file: "commands/decompose.md"
       description: "Parse a source document and generate a feature map with dependency ordering"
+      aliases: ["speckit.decompose"]
     - name: "speckit.decompose.select"
       file: "commands/decompose-select.md"
       description: "Select the next feature to specify from the feature map"

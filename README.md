@@ -10,7 +10,7 @@ This extension fills that gap with a three-command decomposition pipeline.
 
 ## Commands
 
-### `/speckit.decompose <path>`
+### `/speckit.decompose <path>` (alias: `/speckit.decompose.decompose`)
 
 Parse a source document and produce a feature map at `.specify/decompose/feature-map.md`.
 
@@ -40,19 +40,35 @@ Status is derived from which artifacts exist:
 
 ## Installation
 
-Install via the Spec Kit extension manager:
+This extension is not published to the Spec Kit community catalog. Install locally in **dev mode**:
 
-```
-/speckit.install spec-kit-decompose
+### Prerequisites
+
+```bash
+# Install Spec Kit CLI (if not installed)
+uv tool install specify-cli
+# Verify version ≥ 0.4.0
+specify --version
 ```
 
-Or clone into your extensions directory:
+### Install
 
-```
-git clone https://github.com/haveard/spec-kit-decompose.git ~/.speckit/extensions/spec-kit-decompose
+```bash
+# 1. Clone the repository
+git clone https://github.com/lymons/spec-kit-decompose.git /tmp/spec-kit-decompose
+
+# 2. Install in dev mode (manifest is already fixed in this repo)
+specify extension add --dev /tmp/spec-kit-decompose
 ```
 
-Requires Spec Kit ≥ 0.4.0.
+### Verify Installation
+
+```bash
+specify extension list
+# Should show:
+# ✓ Decompose (v1.0.0)
+#    Commands: 3 | Status: Enabled
+```
 
 ## Workflow
 
@@ -72,24 +88,26 @@ Requires Spec Kit ≥ 0.4.0.
 
 5. /speckit.decompose.status
    → See progress, auto-update the feature map
-   → Repeat from step 3
+    → Repeat from step 3
 ```
 
 ## File structure
 
 ```
-spec-kit-decompose/
-  extension.yml               # Extension manifest
+spec-kit-decompose/           # Repository name (clone target)
+  extension.yml               # Extension manifest (id: "decompose")
   README.md
   LICENSE
   CHANGELOG.md
   commands/
-    decompose.md              # /speckit.decompose
+    decompose.md              # /speckit.decompose.decompose (alias: /speckit.decompose)
     decompose-select.md       # /speckit.decompose.select
     decompose-status.md       # /speckit.decompose.status
   templates/
     feature-map-template.md   # Template for the generated feature map
 ```
+
+After cloning to `~/.speckit/extensions/decompose/`, the extension ID is `decompose`.
 
 Artifacts created at runtime:
 
